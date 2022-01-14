@@ -2,8 +2,8 @@
  * \file pile.c
  * \brief gestion d'une pile
  * \author NM
- * \version 0.1
- * \date 11/12/2015
+ * \version 0.2
+ * \date 14/01/2022
  *
  */
 #include <stdio.h>
@@ -163,9 +163,12 @@ void * sommetVoid(TVoidPile * _pile) {
 }
 
 
-/** code pour test (mise au point de la bibliotheque)
+/** code pour tests (lors de la mise au point de la bibliotheque)
  * compiler avec l'option -D pour inclure la fonction main :
- * gcc -c pile.c -D TEST
+ * gcc pile.c -D TEST -o test_pile
+ * 
+ * ensuite la compilation n'integrera plus la fonction main :
+ * gcc -c pile.c
  */
 #ifdef TEST
 /**
@@ -176,7 +179,7 @@ void * sommetVoid(TVoidPile * _pile) {
 int main(void) {
     int i;
     {
-		/* tests pour un pile d'entier */
+		/* tests pour une pile d'entier */
 		TIntPile * p = NULL;
 
 		printf("----------------------------\ntest pour une pile d'entier\n");
@@ -198,6 +201,7 @@ int main(void) {
     /* tests pour un pile de void * */
     {
 		TVoidPile * q = NULL;
+		/* 2 exemples de différents type : entier et chaine */
 		int a = 321;
 		char * b = "azerty";
 
