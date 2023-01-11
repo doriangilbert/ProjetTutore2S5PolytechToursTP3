@@ -46,7 +46,7 @@ TIntPile *initIntPile()
 void deleteIntPile(TIntPile **_pile)
 {
 	free((*_pile)->data);
-	free(_pile);
+	free((*_pile));
 }
 
 /**
@@ -58,9 +58,13 @@ void deleteIntPile(TIntPile **_pile)
  */
 void printIntPile(TIntPile *_pile)
 {
-	for (int i = 0; i <= _pile->indexSommet; i++)
+	if (_pile != NULL)
 	{
-		printf("%d\n", _pile->data[i]);
+		/*for (int i = 0; i < _pile->indexSommet; i++)
+		{
+			printf("%d\n", _pile->data[i]);
+		}*/
+		printf("%d\n", _pile->data[_pile->indexSommet]);
 	}
 }
 
@@ -76,10 +80,10 @@ void printIntPile(TIntPile *_pile)
 void empilerInt(TIntPile *_pile, int _val)
 {
 	_pile->indexSommet++;
-	if (sizeof(_pile->data) == _pile->size + 1)
+	if (_pile->size == _pile->indexSommet)
 	{
 		_pile->size++;
-		realloc(_pile->data,_pile->size);
+		_pile->data = realloc(_pile->data, sizeof(int) * _pile->size);
 	}
 	_pile->data[_pile->indexSommet] = _val;
 }
@@ -95,7 +99,11 @@ int depilerInt(TIntPile *_pile)
 {
 	int val = _pile->data[_pile->indexSommet];
 	_pile->data[_pile->indexSommet] = 0;
-	_pile->indexSommet--;
+	if (_pile->indexSommet != 0)
+	{
+		_pile->indexSommet = _pile->indexSommet - 1;
+	}
+
 	return val;
 }
 
@@ -187,6 +195,7 @@ void *sommetVoid(TVoidPile *_pile)
 	/* A ECRIRE */
 }
 
+#ifdef TEST
 /** code pour tests (lors de la mise au point de la bibliotheque)
  * compiler avec l'option -D pour inclure la fonction main :
  * gcc pile.c -D TEST -o test_pile
@@ -194,7 +203,6 @@ void *sommetVoid(TVoidPile *_pile)
  * ensuite la compilation n'integrera plus la fonction main :
  * gcc -c pile.c
  */
-#ifdef TEST
 /**
  * \fn int main(void)
  * \brief fonction principale utilisee uniquement en cas de tests
