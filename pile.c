@@ -78,13 +78,8 @@ void empilerInt(TIntPile *_pile, int _val)
 	_pile->indexSommet++;
 	if (sizeof(_pile->data) == _pile->size + 1)
 	{
-		int *Truc = malloc(sizeof(int) * _pile->indexSommet);
-		memcopy(Truc, _pile->data, _pile->indexSommet - 1);
-		free(_pile->data);
-		_pile->data = malloc(sizeof(int) * _pile->indexSommet);
-		memcopy(_pile->data, Truc, _pile->indexSommet - 1);
-		free(Truc);
 		_pile->size++;
+		realloc(_pile->data,_pile->size);
 	}
 	_pile->data[_pile->indexSommet] = _val;
 }
