@@ -129,7 +129,10 @@ int sommetInt(TIntPile *_pile)
  */
 TVoidPile *initVoidPile()
 {
-	/* A ECRIRE */
+	TVoidPile* Truc=malloc(sizeof(TVoidPile));
+	Truc->indexSommet=0;
+	Truc->size=_DEFAULT_PILE_SIZE;
+	Truc->data=malloc(sizeof(void*)*Truc->size);
 }
 
 /**
@@ -141,7 +144,7 @@ TVoidPile *initVoidPile()
  */
 void deleteVoidPile(TVoidPile **_pile)
 {
-	/* A ECRIRE */
+	free((*_pile));
 }
 
 /**
@@ -155,7 +158,7 @@ void deleteVoidPile(TVoidPile **_pile)
  */
 void printVoidPile(TVoidPile *_pile)
 {
-	/* A ECRIRE */
+	
 }
 
 /**
