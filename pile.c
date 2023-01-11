@@ -1,9 +1,9 @@
 /**
  * \file pile.c
  * \brief gestion d'une pile
- * \author NM
+ * \author GILBERT Dorian et DHONDT Matheo
  * \version 0.2
- * \date 14/01/2022
+ * \date 11/01/2023
  *
  */
 #include <stdio.h>
@@ -11,12 +11,9 @@
 #include <assert.h>
 #include "pile.h"
 
-
 /** constante pour la taille par defaut d'une pile (utilise pour
  * la reservation memoire) */
 #define _DEFAULT_PILE_SIZE 15
-
-
 
 /** pile d'entier ----------------------------------------------------*/
 /**
@@ -26,10 +23,18 @@
  *
  * \return pointeur sur TIntPile cree en memoire
  */
-TIntPile * initIntPile() {
-/* A ECRIRE */
+TIntPile *initIntPile()
+{
+	TIntPile *Truc = malloc(sizeof(TIntPile));
+	Truc->size = _DEFAULT_PILE_SIZE;
+	Truc->data = malloc(sizeof(int) * Truc->size);
+	for (int i = 0; i < Truc->size; i++)
+	{
+		Truc->data[i] = 0;
+	}
+	Truc->indexSommet = 0;
+	return Truc;
 }
-
 
 /**
  * \fn void deleteIntPile(TIntPile ** _pile)
@@ -38,10 +43,11 @@ TIntPile * initIntPile() {
  * \param[in/out] _pile : l'adresse du pointeur sur la pile
  * \return neant
  */
-void deleteIntPile(TIntPile ** _pile) {
-/* A ECRIRE */
+void deleteIntPile(TIntPile **_pile)
+{
+	free((*_pile)->data);
+	free(_pile);
 }
-
 
 /**
  * \fn void printIntPile(TIntPile * _pile)
@@ -50,8 +56,12 @@ void deleteIntPile(TIntPile ** _pile) {
  * \param[in] _pile : la pile a afficher
  * \return neant
  */
-void printIntPile(TIntPile * _pile) {
-/* A ECRIRE */
+void printIntPile(TIntPile *_pile)
+{
+	for (int i = 0; i <= _pile->indexSommet; i++)
+	{
+		printf("%d\n", _pile->data[i]);
+	}
 }
 
 /**
@@ -63,8 +73,20 @@ void printIntPile(TIntPile * _pile) {
  * \param[in] _val : l'entier a empiler
  * \return neant
  */
-void empilerInt(TIntPile * _pile, int _val) {
-/* A ECRIRE */
+void empilerInt(TIntPile *_pile, int _val)
+{
+	_pile->indexSommet++;
+	if (sizeof(_pile->data) == _pile->size + 1)
+	{
+		int *Truc = malloc(sizeof(int) * _pile->indexSommet);
+		memcopy(Truc, _pile->data, _pile->indexSommet - 1);
+		free(_pile->data);
+		_pile->data = malloc(sizeof(int) * _pile->indexSommet);
+		memcopy(_pile->data, Truc, _pile->indexSommet - 1);
+		free(Truc);
+		_pile->size++;
+	}
+	_pile->data[_pile->indexSommet] = _val;
 }
 
 /**
@@ -74,8 +96,12 @@ void empilerInt(TIntPile * _pile, int _val) {
  * \param[in] _pile : la pile a depiler
  * \return l'entier en sommet de pile (0 si la pile est vide)
  */
-int depilerInt(TIntPile * _pile) {
-/* A ECRIRE */
+int depilerInt(TIntPile *_pile)
+{
+	int val = _pile->data[_pile->indexSommet];
+	_pile->data[_pile->indexSommet] = 0;
+	_pile->indexSommet--;
+	return val;
 }
 
 /**
@@ -85,10 +111,10 @@ int depilerInt(TIntPile * _pile) {
  * \param[in] _pile : la pile a utiliser
  * \return l'entier en sommet de pile (0 si la pile est vide)
  */
-int sommetInt(TIntPile * _pile) {
-/* A ECRIRE */
+int sommetInt(TIntPile *_pile)
+{
+	return _pile->data[_pile->indexSommet];
 }
-
 
 /** pile de void * ---------------------------------------------------*/
 
@@ -98,10 +124,10 @@ int sommetInt(TIntPile * _pile) {
  *
  * \return pointeur sur une pile TVoidPile
  */
-TVoidPile * initVoidPile() {
-/* A ECRIRE */
+TVoidPile *initVoidPile()
+{
+	/* A ECRIRE */
 }
-
 
 /**
  * \fn void deleteVoidPile(TVoidPile ** _pile)
@@ -110,10 +136,10 @@ TVoidPile * initVoidPile() {
  * \param[in] _pile : adresse du pointeur sur la pile a liberer
  * \return neant
  */
-void deleteVoidPile(TVoidPile ** _pile) {
-/* A ECRIRE */
+void deleteVoidPile(TVoidPile **_pile)
+{
+	/* A ECRIRE */
 }
-
 
 /**
  * \fn void printVoidPile(TVoidPile * _pile)
@@ -124,8 +150,9 @@ void deleteVoidPile(TVoidPile ** _pile) {
  * \param[in] _pile : pile a afficher
  * \return neant
  */
-void printVoidPile(TVoidPile * _pile) {
-/* A ECRIRE */
+void printVoidPile(TVoidPile *_pile)
+{
+	/* A ECRIRE */
 }
 
 /**
@@ -136,8 +163,9 @@ void printVoidPile(TVoidPile * _pile) {
  * \param[in] _val : element de type void * a empiler
  * \return neant
  */
-void empilerVoid(TVoidPile * _pile, void * _val) {
-/* A ECRIRE */
+void empilerVoid(TVoidPile *_pile, void *_val)
+{
+	/* A ECRIRE */
 }
 
 /**
@@ -147,8 +175,9 @@ void empilerVoid(TVoidPile * _pile, void * _val) {
  * \param[in] _pile : pile a utiliser
  * \return pointeur sur void (0 si la pile est vide)
  */
-void * depilerVoid(TVoidPile * _pile) {
-/* A ECRIRE */
+void *depilerVoid(TVoidPile *_pile)
+{
+	/* A ECRIRE */
 }
 
 /**
@@ -158,15 +187,15 @@ void * depilerVoid(TVoidPile * _pile) {
  * \param[in] _pile : pile a utiliser pour lire le sommet
  * \return la valeur void * du sommet (0 si la pile est vide)
  */
-void * sommetVoid(TVoidPile * _pile) {
-/* A ECRIRE */
+void *sommetVoid(TVoidPile *_pile)
+{
+	/* A ECRIRE */
 }
-
 
 /** code pour tests (lors de la mise au point de la bibliotheque)
  * compiler avec l'option -D pour inclure la fonction main :
  * gcc pile.c -D TEST -o test_pile
- * 
+ *
  * ensuite la compilation n'integrera plus la fonction main :
  * gcc -c pile.c
  */
@@ -176,65 +205,67 @@ void * sommetVoid(TVoidPile * _pile) {
  * \brief fonction principale utilisee uniquement en cas de tests
  *
  */
-int main(void) {
-    int i;
-    {
+int main(void)
+{
+	int i;
+	{
 		/* tests pour une pile d'entier */
-		TIntPile * p = NULL;
+		TIntPile *p = NULL;
 
 		printf("----------------------------\ntest pour une pile d'entier\n");
-		//empilerInt(p,99);
+		// empilerInt(p,99);
 		printIntPile(p);
 		p = initIntPile();
 		printIntPile(p);
-		for ( i=0;i<35;i++) {
-			empilerInt(p,sommetInt(p)+i);
+		for (i = 0; i < 35; i++)
+		{
+			empilerInt(p, sommetInt(p) + i);
 			printIntPile(p);
 		}
-		for ( i=0;i<40;i++) {
+		for (i = 0; i < 40; i++)
+		{
 			int r = depilerInt(p);
-			printf("r=%d\n",r);
+			printf("r=%d\n", r);
 			printIntPile(p);
 		}
 		deleteIntPile(&p);
-    }
-    /* tests pour un pile de void * */
-    {
-		TVoidPile * q = NULL;
+	}
+	/* tests pour un pile de void * */
+	{
+		TVoidPile *q = NULL;
 		/* 2 exemples de différents type : entier et chaine */
 		int a = 321;
-		char * b = "azerty";
+		char *b = "azerty";
 
 		printf("----------------------------\ntest pour une pile de void *\n");
-		//empilerVoid(q,&a);
+		// empilerVoid(q,&a);
 		printVoidPile(q);
 		q = initVoidPile();
 		printVoidPile(q);
-		empilerVoid(q,&a);
+		empilerVoid(q, &a);
 		printVoidPile(q);
-		empilerVoid(q,&b);
+		empilerVoid(q, &b);
 		printVoidPile(q);
-		empilerVoid(q,&a);
+		empilerVoid(q, &a);
 		printVoidPile(q);
-		empilerVoid(q,q);
+		empilerVoid(q, q);
 		printVoidPile(q);
-		printf("depiler : %p\n",depilerVoid(q));
-		printVoidPile(q);
-
-		printf("depiler : %p\n",depilerVoid(q));
+		printf("depiler : %p\n", depilerVoid(q));
 		printVoidPile(q);
 
-		printf("depiler : %p\n",depilerVoid(q));
+		printf("depiler : %p\n", depilerVoid(q));
 		printVoidPile(q);
 
-		printf("depiler : %p\n",depilerVoid(q));
+		printf("depiler : %p\n", depilerVoid(q));
 		printVoidPile(q);
 
-		printf("depiler : %p\n",depilerVoid(q));
+		printf("depiler : %p\n", depilerVoid(q));
+		printVoidPile(q);
+
+		printf("depiler : %p\n", depilerVoid(q));
 		printVoidPile(q);
 
 		deleteVoidPile(&q);
-
 	}
 }
 #endif
