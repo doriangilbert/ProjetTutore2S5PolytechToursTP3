@@ -97,13 +97,11 @@ void empilerInt(TIntPile *_pile, int _val)
  */
 int depilerInt(TIntPile *_pile)
 {
-	int val = _pile->data[_pile->indexSommet];
-	_pile->data[_pile->indexSommet] = 0;
 	if (_pile->indexSommet != -1)
 	{
 		_pile->indexSommet = _pile->indexSommet - 1;
 	}
-	return val;
+	return _pile->data[_pile->indexSommet + 1];
 }
 
 /**
@@ -115,7 +113,12 @@ int depilerInt(TIntPile *_pile)
  */
 int sommetInt(TIntPile *_pile)
 {
-	return _pile->data[_pile->indexSommet];
+	if (_pile != NULL)
+	{
+		if (_pile->indexSommet == -1)
+			return _pile->data[_pile->indexSommet];
+	}
+	return 0;
 }
 
 /** pile de void * ---------------------------------------------------*/
@@ -146,6 +149,7 @@ TVoidPile *initVoidPile()
  */
 void deleteVoidPile(TVoidPile **_pile)
 {
+	free((*_pile)->data);
 	free((*_pile));
 }
 
@@ -277,7 +281,7 @@ int main(void)
 		char *b = "azerty";
 
 		printf("----------------------------\ntest pour une pile de void *\n");
-		empilerVoid(q,&a);
+		empilerVoid(q, &a);
 		printVoidPile(q);
 		q = initVoidPile();
 		printVoidPile(q);
