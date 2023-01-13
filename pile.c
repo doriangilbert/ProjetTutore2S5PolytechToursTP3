@@ -32,7 +32,7 @@ TIntPile *initIntPile()
 	{
 		_pile->data[i] = 0;
 	}
-	_pile->indexSommet = 0;
+	_pile->indexSommet = -1;
 	return _pile;
 }
 
@@ -99,11 +99,10 @@ int depilerInt(TIntPile *_pile)
 {
 	int val = _pile->data[_pile->indexSommet];
 	_pile->data[_pile->indexSommet] = 0;
-	if (_pile->indexSommet != 0)
+	if (_pile->indexSommet != -1)
 	{
 		_pile->indexSommet = _pile->indexSommet - 1;
 	}
-
 	return val;
 }
 
@@ -129,10 +128,13 @@ int sommetInt(TIntPile *_pile)
  */
 TVoidPile *initVoidPile()
 {
-	TVoidPile* _pile=malloc(sizeof(TVoidPile));
-	_pile->indexSommet=0;
-	_pile->size=_DEFAULT_PILE_SIZE;
-	_pile->data=malloc(sizeof(void*)*_pile->size);
+	TVoidPile *_pile = malloc(sizeof(TVoidPile));
+	_pile->indexSommet = -1;
+	_pile->size = _DEFAULT_PILE_SIZE;
+	_pile->data = malloc(sizeof(void *) * _pile->size);
+	for (int i = 0; i < _pile->size; i++)
+		_pile->data[i] = NULL;
+	return _pile;
 }
 
 /**
@@ -158,7 +160,11 @@ void deleteVoidPile(TVoidPile **_pile)
  */
 void printVoidPile(TVoidPile *_pile)
 {
-	
+	if (_pile != NULL)
+	{
+		if (_pile->indexSommet != -1)
+			printf("%p\n", &_pile->data[_pile->indexSommet]);
+	}
 }
 
 /**
@@ -171,7 +177,16 @@ void printVoidPile(TVoidPile *_pile)
  */
 void empilerVoid(TVoidPile *_pile, void *_val)
 {
-	/* A ECRIRE */
+	if (_pile != NULL)
+	{
+		_pile->indexSommet++;
+		if (_pile->size == _pile->indexSommet)
+		{
+			_pile->size++;
+			_pile->data = realloc(_pile->data, sizeof(void *) * _pile->size);
+		}
+		_pile->data[_pile->indexSommet] = _val;
+	}
 }
 
 /**
@@ -183,7 +198,16 @@ void empilerVoid(TVoidPile *_pile, void *_val)
  */
 void *depilerVoid(TVoidPile *_pile)
 {
-	/* A ECRIRE */
+	if (_pile != NULL)
+	{
+		if (_pile->indexSommet != -1)
+		{
+			_pile->indexSommet = _pile->indexSommet - 1;
+			return &_pile->data[_pile->indexSommet + 1];
+		}
+		return 0;
+	}
+	return 0;
 }
 
 /**
@@ -195,10 +219,17 @@ void *depilerVoid(TVoidPile *_pile)
  */
 void *sommetVoid(TVoidPile *_pile)
 {
-	/* A ECRIRE */
+	if (_pile != NULL)
+	{
+		if (_pile->data != NULL)
+		{
+			if (_pile->data[_pile->indexSommet] != NULL)
+				return &_pile->data[_pile->indexSommet];
+		}
+	}
+	return 0;
 }
 
-#ifdef TEST
 /** code pour tests (lors de la mise au point de la bibliotheque)
  * compiler avec l'option -D pour inclure la fonction main :
  * gcc pile.c -D TEST -o test_pile
@@ -206,6 +237,8 @@ void *sommetVoid(TVoidPile *_pile)
  * ensuite la compilation n'integrera plus la fonction main :
  * gcc -c pile.c
  */
+
+#ifdef TEST
 /**
  * \fn int main(void)
  * \brief fonction principale utilisee uniquement en cas de tests
@@ -244,7 +277,7 @@ int main(void)
 		char *b = "azerty";
 
 		printf("----------------------------\ntest pour une pile de void *\n");
-		// empilerVoid(q,&a);
+		empilerVoid(q,&a);
 		printVoidPile(q);
 		q = initVoidPile();
 		printVoidPile(q);
