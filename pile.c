@@ -25,15 +25,15 @@
  */
 TIntPile *initIntPile()
 {
-	TIntPile *Truc = malloc(sizeof(TIntPile));
-	Truc->size = _DEFAULT_PILE_SIZE;
-	Truc->data = malloc(sizeof(int) * Truc->size);
-	for (int i = 0; i < Truc->size; i++)
+	TIntPile *_pile = malloc(sizeof(TIntPile));
+	_pile->size = _DEFAULT_PILE_SIZE;
+	_pile->data = malloc(sizeof(int) * _pile->size);
+	for (int i = 0; i < _pile->size; i++)
 	{
-		Truc->data[i] = 0;
+		_pile->data[i] = 0;
 	}
-	Truc->indexSommet = 0;
-	return Truc;
+	_pile->indexSommet = 0;
+	return _pile;
 }
 
 /**
@@ -129,10 +129,10 @@ int sommetInt(TIntPile *_pile)
  */
 TVoidPile *initVoidPile()
 {
-	TVoidPile* Truc=malloc(sizeof(TVoidPile));
-	Truc->indexSommet=0;
-	Truc->size=_DEFAULT_PILE_SIZE;
-	Truc->data=malloc(sizeof(void*)*Truc->size);
+	TVoidPile* _pile=malloc(sizeof(TVoidPile));
+	_pile->indexSommet=0;
+	_pile->size=_DEFAULT_PILE_SIZE;
+	_pile->data=malloc(sizeof(void*)*_pile->size);
 }
 
 /**
