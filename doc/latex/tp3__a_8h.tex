@@ -1,0 +1,147 @@
+\hypertarget{tp3__a_8h}{}\section{tp3\+\_\+a.\+h File Reference}
+\label{tp3__a_8h}\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+
+
+Header pour analyseur syntaxique LR pour le langage J\+S\+ON.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tp2\+\_\+lex.\+h\char`\"{}}\newline
+Include dependency graph for tp3\+\_\+a.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tp3__a_8h_a3cf811ca570156fdc270b6e298a73e7c}{analyseur\+LR} (char $\ast$\+\_\+chaine)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tp3__a_8h_a9cf8d5b1434176e8d506f6a9d35bb7d7}{Table\+Action} \mbox{[}26\mbox{]}\mbox{[}18\mbox{]}
+\item 
+int \hyperlink{tp3__a_8h_aa955ea7e94631c77fab5978b0661085a}{Table\+Goto} \mbox{[}26\mbox{]}\mbox{[}18\mbox{]}
+\item 
+int \hyperlink{tp3__a_8h_aa3cdd5ba9499fe2fb96a2dad215f8120}{taille\+Partie\+Droite\+Regle} \mbox{[}16\mbox{]} = \{2,3,1,3,3,2,3,1,3,1,1,1,1,1,1,1\}
+\item 
+int \hyperlink{tp3__a_8h_ab7acdb9b20edcccedde7de218b7a5800}{element\+Partie\+Gauche\+Regle} \mbox{[}16\mbox{]} = \{13,13,14,14,15,16,16,17,17,18,18,18,18,18,18,18\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header pour analyseur syntaxique LR pour le langage J\+S\+ON. 
+
+\begin{DoxyAuthor}{Author}
+G\+I\+L\+B\+E\+RT Dorian et D\+H\+O\+N\+DT Matheo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26/01/2023 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tp3__a_8h_a3cf811ca570156fdc270b6e298a73e7c}\label{tp3__a_8h_a3cf811ca570156fdc270b6e298a73e7c}} 
+\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}!analyseur\+LR@{analyseur\+LR}}
+\index{analyseur\+LR@{analyseur\+LR}!tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+\subsubsection{\texorpdfstring{analyseur\+L\+R()}{analyseurLR()}}
+{\footnotesize\ttfamily int analyseur\+LR (\begin{DoxyParamCaption}\item[{char $\ast$}]{\+\_\+chaine }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tp3__a_8h_ab7acdb9b20edcccedde7de218b7a5800}\label{tp3__a_8h_ab7acdb9b20edcccedde7de218b7a5800}} 
+\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}!element\+Partie\+Gauche\+Regle@{element\+Partie\+Gauche\+Regle}}
+\index{element\+Partie\+Gauche\+Regle@{element\+Partie\+Gauche\+Regle}!tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+\subsubsection{\texorpdfstring{element\+Partie\+Gauche\+Regle}{elementPartieGaucheRegle}}
+{\footnotesize\ttfamily int element\+Partie\+Gauche\+Regle\mbox{[}16\mbox{]} = \{13,13,14,14,15,16,16,17,17,18,18,18,18,18,18,18\}}
+
+Table contenant l\textquotesingle{}élément en partie gauche de chaque règle \mbox{\Hypertarget{tp3__a_8h_a9cf8d5b1434176e8d506f6a9d35bb7d7}\label{tp3__a_8h_a9cf8d5b1434176e8d506f6a9d35bb7d7}} 
+\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}!Table\+Action@{Table\+Action}}
+\index{Table\+Action@{Table\+Action}!tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+\subsubsection{\texorpdfstring{Table\+Action}{TableAction}}
+{\footnotesize\ttfamily int Table\+Action\mbox{[}26\mbox{]}\mbox{[}18\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+
+\{
+\{\textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  3 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  1 , \textcolor{charliteral}{'e'},  1 ,  1 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'},  1 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  2 , \textcolor{charliteral}{'e'},  2 ,  2 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'},  2 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  4 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 12 , \textcolor{charliteral}{'e'}, 12 , 12 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 13 , \textcolor{charliteral}{'e'}, 13 , 13 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  5 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'},  5 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 10 , \textcolor{charliteral}{'e'}, 10 , 10 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 11 , \textcolor{charliteral}{'e'}, 11 , 11 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 14 , \textcolor{charliteral}{'e'}, 14 , 14 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 15 , \textcolor{charliteral}{'e'}, 15 , 15 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, 16 , \textcolor{charliteral}{'e'}, 16 , 16 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, 8  , \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  6 , \textcolor{charliteral}{'e'}, 6  ,  6 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'},  7 , \textcolor{charliteral}{'e'}, 7  ,  7 , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'d'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}, 
+\{\textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, 9  , \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}, \textcolor{charliteral}{'e'}\}\}
+\end{DoxyCode}
+Table contenant les actions à effectuer (Acc=\textquotesingle{}a\textquotesingle{} ; Deplacement=\textquotesingle{}d\textquotesingle{} ; Reduction=$<$un numéro=\char`\"{}\char`\"{} de=\char`\"{}\char`\"{} règle$>$=\char`\"{}\char`\"{}$>$ ; Erreur=\textquotesingle{}e\textquotesingle{}) \mbox{\Hypertarget{tp3__a_8h_aa955ea7e94631c77fab5978b0661085a}\label{tp3__a_8h_aa955ea7e94631c77fab5978b0661085a}} 
+\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}!Table\+Goto@{Table\+Goto}}
+\index{Table\+Goto@{Table\+Goto}!tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+\subsubsection{\texorpdfstring{Table\+Goto}{TableGoto}}
+{\footnotesize\ttfamily int Table\+Goto\mbox{[}26\mbox{]}\mbox{[}18\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+
+\{
+\{ 2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 0,-1,-1,-1,-1,-1,-1\}, 
+\{-1, 5,-1,-1,-1,-1, 6,-1,-1,-1,-1,-1,-1, 3, 4,-1,-1,-1\}, 
+\{-1, 7,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1, 8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1, 9,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1, 6,-1,-1,-1,-1,-1,-1,10, 4,-1,-1,-1\}, 
+\{ 2,-1,14,-1,-1,-1,15,16,17,18,19,-1,11,-1,-1,12,-1,13\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{ 2,-1,14,22,-1,-1,15,16,17,18,19,-1,11,-1,-1,12,20,21\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,23,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,24,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}, 
+\{ 2,-1,14,-1,-1,-1,15,16,17,18,19,-1,11,-1,-1,12,25,21\}, 
+\{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1\}\}
+\end{DoxyCode}
+Table contenant les états vers lesquels naviguer (Erreur/\+Pas d\textquotesingle{}état=-\/1) \mbox{\Hypertarget{tp3__a_8h_aa3cdd5ba9499fe2fb96a2dad215f8120}\label{tp3__a_8h_aa3cdd5ba9499fe2fb96a2dad215f8120}} 
+\index{tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}!taille\+Partie\+Droite\+Regle@{taille\+Partie\+Droite\+Regle}}
+\index{taille\+Partie\+Droite\+Regle@{taille\+Partie\+Droite\+Regle}!tp3\+\_\+a.\+h@{tp3\+\_\+a.\+h}}
+\subsubsection{\texorpdfstring{taille\+Partie\+Droite\+Regle}{taillePartieDroiteRegle}}
+{\footnotesize\ttfamily int taille\+Partie\+Droite\+Regle\mbox{[}16\mbox{]} = \{2,3,1,3,3,2,3,1,3,1,1,1,1,1,1,1\}}
+
+Table contenant la taille de la partie droite de chaque règle 

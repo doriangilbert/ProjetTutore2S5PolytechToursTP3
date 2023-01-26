@@ -1,0 +1,346 @@
+\hypertarget{json__tree_8h}{}\section{json\+\_\+tree.\+h File Reference}
+\label{json__tree_8h}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+
+
+implemente la mise en memoire d\textquotesingle{}un arbre json  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__json__pair}{\+\_\+json\+\_\+pair}
+\item 
+union \hyperlink{unionJsonValue}{Json\+Value}
+\begin{DoxyCompactList}\small\item\em pour stocker \char`\"{}value\char`\"{} \end{DoxyCompactList}\item 
+struct \hyperlink{struct__json__value__container}{\+\_\+json\+\_\+value\+\_\+container}
+\item 
+struct \hyperlink{struct__json__object}{\+\_\+json\+\_\+object}
+\item 
+struct \hyperlink{struct__json__array}{\+\_\+json\+\_\+array}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{json__tree_8h_af4d0262661fb41a7a3e83eaaa0cde01d}{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL}~2
+\item 
+\#define \hyperlink{json__tree_8h_a52c777ff15f7f751e41e41e7f3f91fbb}{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE}~1
+\item 
+\#define \hyperlink{json__tree_8h_a4a64518555ef089bda8ae9def554aa3e}{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE}~0
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__json__pair}{\+\_\+json\+\_\+pair} \hyperlink{json__tree_8h_ae67ac47c44d822409d979fce1b82d262}{Json\+Pair}
+\item 
+typedef enum \hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}{\+\_\+value\+\_\+type} \hyperlink{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}{Value\+Type}
+\item 
+typedef struct \hyperlink{struct__json__value__container}{\+\_\+json\+\_\+value\+\_\+container} \hyperlink{json__tree_8h_a6e8f0dbaec21e3776411e7f525f42d12}{Json\+Value\+Container}
+\item 
+typedef struct \hyperlink{struct__json__object}{\+\_\+json\+\_\+object} \hyperlink{json__tree_8h_a0beac496a571658774a814b486e772e1}{Json\+Object}
+\item 
+typedef struct \hyperlink{struct__json__array}{\+\_\+json\+\_\+array} \hyperlink{json__tree_8h_a1b93cc6238d7024ba2ff8e83ad88e28f}{Json\+Array}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}{\+\_\+value\+\_\+type} \{ \newline
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a6b30bda829e4fe673ed1afb7101a4746}{string}, 
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a9aef7263e1cd5f72bbf6b6aa3023224b}{integer}, 
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aea5e4004f91963042b56ac029edb0566}{real}, 
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28acf7088fae10ac1c888296c6abe135276}{object}, 
+\newline
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aa0a0cb93f2fc0f7be4b539f4e904917a}{array}, 
+\hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a995640a12d5339aabee76a933fb5f519}{constant}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structJsonArray}{Json\+Array} $\ast$ \hyperlink{json__tree_8h_a64a23e508691b4752f9d3423ce7f44cf}{Create\+Json\+Array} ()
+\begin{DoxyCompactList}\small\item\em creation en memoire d\textquotesingle{}un \hyperlink{structJsonArray}{Json\+Array} \end{DoxyCompactList}\item 
+int \hyperlink{json__tree_8h_ae1f0848cee2a75adc68951d7f4e0db94}{Insert\+Json\+Array} (\hyperlink{structJsonArray}{Json\+Array} $\ast$\+\_\+array, \hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$\+\_\+value\+Container, const unsigned int \+\_\+position)
+\item 
+int \hyperlink{json__tree_8h_a61372b2f4a3eb734f752159f6265940d}{Delete\+Json\+Array} (\hyperlink{structJsonArray}{Json\+Array} $\ast$$\ast$\+\_\+array)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_a30b5080b3f6aba1bbf430aac34d912f7}{Print\+Json\+Array} (const \hyperlink{structJsonArray}{Json\+Array} $\ast$\+\_\+array)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_a60f3e947d378f0d1513a6a2495110e0f}{Print\+Dot\+Json\+Array} (const \hyperlink{structJsonArray}{Json\+Array} $\ast$\+\_\+array)
+\item 
+\hyperlink{structJsonObject}{Json\+Object} $\ast$ \hyperlink{json__tree_8h_af7af287d13cd208992c31d69f838c816}{Create\+Json\+Object} ()
+\begin{DoxyCompactList}\small\item\em construit un \hyperlink{structJsonObject}{Json\+Object} vide \end{DoxyCompactList}\item 
+int \hyperlink{json__tree_8h_add92f2aba1fffe0af85073527c95fc0e}{Insert\+Json\+Object} (\hyperlink{structJsonObject}{Json\+Object} $\ast$\+\_\+object, \hyperlink{structJsonPair}{Json\+Pair} $\ast$\+\_\+pair)
+\item 
+\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$ \hyperlink{json__tree_8h_af308a2f032f23582b09b7a0238f8f268}{Get\+Json\+Value\+Container} (const \hyperlink{structJsonObject}{Json\+Object} $\ast$\+\_\+object, const char $\ast$\+\_\+string)
+\item 
+int \hyperlink{json__tree_8h_ab9fcb0ea6aba690197eeaa9170d6e279}{Delete\+Json\+Object} (\hyperlink{structJsonObject}{Json\+Object} $\ast$$\ast$\+\_\+object)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_ae153464704693dc8283f34792b4c0a2e}{Print\+Json\+Object} (const \hyperlink{structJsonObject}{Json\+Object} $\ast$\+\_\+object)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_a995ed6708039e3e415e5baf8d00ea62e}{Print\+Dot\+Json\+Object} (const \hyperlink{structJsonObject}{Json\+Object} $\ast$\+\_\+object, int \+\_\+id, int \+\_\+id\+Parent)
+\item 
+\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$ \hyperlink{json__tree_8h_a9bab288b17c70677b8c1d7619b2925fc}{Create\+Json\+Value\+Container} ()
+\begin{DoxyCompactList}\small\item\em construit un \hyperlink{structJsonValueContainer}{Json\+Value\+Container} vide \end{DoxyCompactList}\item 
+void \hyperlink{json__tree_8h_a918da5f7ca94d6544f77bef2fb75c177}{Update\+Json\+Value\+Container} (\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$\+\_\+value\+Container, \hyperlink{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}{Value\+Type} \+\_\+type, \hyperlink{unionJsonValue}{Json\+Value} \+\_\+value)
+\item 
+int \hyperlink{json__tree_8h_a6d02f560a673f8f70aec2c88d8e32d2d}{Delete\+Json\+Value\+Container} (\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$$\ast$\+\_\+value\+Container)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_ac93a83ad1ed7f56dd9ecd83e5dfdbdb6}{Print\+Json\+Value\+Container} (const \hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$\+\_\+value\+Container)
+\item 
+\hyperlink{structJsonPair}{Json\+Pair} $\ast$ \hyperlink{json__tree_8h_ad88d80b56f7d04bea1de11917e34fa3d}{Create\+Json\+Pair} ()
+\item 
+void \hyperlink{json__tree_8h_a028e96028bb843d57b69aecb42b50df1}{Update\+Json\+Pair} (\hyperlink{structJsonPair}{Json\+Pair} $\ast$\+\_\+pair, char $\ast$\+\_\+string, \hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$\+\_\+value)
+\item 
+int \hyperlink{json__tree_8h_abcd2910290251bc96cec45cf46d364b7}{Delete\+Json\+Pair} (\hyperlink{structJsonPair}{Json\+Pair} $\ast$$\ast$\+\_\+pair)
+\item 
+char $\ast$ \hyperlink{json__tree_8h_aa520ede60813d831e4d92fa2061ed0c4}{Print\+Json\+Pair} (const \hyperlink{structJsonPair}{Json\+Pair} $\ast$\+\_\+pair)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+implemente la mise en memoire d\textquotesingle{}un arbre json 
+
+\begin{DoxyAuthor}{Author}
+NM 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06.\+12.\+2014 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{json__tree_8h_a4a64518555ef089bda8ae9def554aa3e}\label{json__tree_8h_a4a64518555ef089bda8ae9def554aa3e}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE}}
+\index{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE}{CSTE\_JSON\_FALSE}}
+{\footnotesize\ttfamily \#define C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+F\+A\+L\+SE~0}
+
+\mbox{\Hypertarget{json__tree_8h_af4d0262661fb41a7a3e83eaaa0cde01d}\label{json__tree_8h_af4d0262661fb41a7a3e83eaaa0cde01d}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL}}
+\index{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL}{CSTE\_JSON\_NULL}}
+{\footnotesize\ttfamily \#define C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+N\+U\+LL~2}
+
+\mbox{\Hypertarget{json__tree_8h_a52c777ff15f7f751e41e41e7f3f91fbb}\label{json__tree_8h_a52c777ff15f7f751e41e41e7f3f91fbb}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE}}
+\index{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE@{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE}{CSTE\_JSON\_TRUE}}
+{\footnotesize\ttfamily \#define C\+S\+T\+E\+\_\+\+J\+S\+O\+N\+\_\+\+T\+R\+UE~1}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{json__tree_8h_a1b93cc6238d7024ba2ff8e83ad88e28f}\label{json__tree_8h_a1b93cc6238d7024ba2ff8e83ad88e28f}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Json\+Array@{Json\+Array}}
+\index{Json\+Array@{Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Json\+Array}{JsonArray}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__json__array}{\+\_\+json\+\_\+array}  \hyperlink{structJsonArray}{Json\+Array}}
+
+\mbox{\Hypertarget{json__tree_8h_a0beac496a571658774a814b486e772e1}\label{json__tree_8h_a0beac496a571658774a814b486e772e1}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Json\+Object@{Json\+Object}}
+\index{Json\+Object@{Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Json\+Object}{JsonObject}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__json__object}{\+\_\+json\+\_\+object}  \hyperlink{structJsonObject}{Json\+Object}}
+
+\mbox{\Hypertarget{json__tree_8h_ae67ac47c44d822409d979fce1b82d262}\label{json__tree_8h_ae67ac47c44d822409d979fce1b82d262}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Json\+Pair@{Json\+Pair}}
+\index{Json\+Pair@{Json\+Pair}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Json\+Pair}{JsonPair}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__json__pair}{\+\_\+json\+\_\+pair}  \hyperlink{structJsonPair}{Json\+Pair}}
+
+\mbox{\Hypertarget{json__tree_8h_a6e8f0dbaec21e3776411e7f525f42d12}\label{json__tree_8h_a6e8f0dbaec21e3776411e7f525f42d12}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Json\+Value\+Container@{Json\+Value\+Container}}
+\index{Json\+Value\+Container@{Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Json\+Value\+Container}{JsonValueContainer}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__json__value__container}{\+\_\+json\+\_\+value\+\_\+container}  \hyperlink{structJsonValueContainer}{Json\+Value\+Container}}
+
+\mbox{\Hypertarget{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}\label{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Value\+Type@{Value\+Type}}
+\index{Value\+Type@{Value\+Type}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Value\+Type}{ValueType}}
+{\footnotesize\ttfamily typedef enum \hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}{\+\_\+value\+\_\+type}  \hyperlink{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}{Value\+Type}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!\+\_\+value\+\_\+type@{\+\_\+value\+\_\+type}}
+\index{\+\_\+value\+\_\+type@{\+\_\+value\+\_\+type}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+value\+\_\+type}{\_value\_type}}
+{\footnotesize\ttfamily enum \hyperlink{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28}{\+\_\+value\+\_\+type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{string@{string}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!string@{string}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a6b30bda829e4fe673ed1afb7101a4746}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a6b30bda829e4fe673ed1afb7101a4746}} 
+string&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{integer@{integer}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!integer@{integer}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a9aef7263e1cd5f72bbf6b6aa3023224b}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a9aef7263e1cd5f72bbf6b6aa3023224b}} 
+integer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{real@{real}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!real@{real}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aea5e4004f91963042b56ac029edb0566}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aea5e4004f91963042b56ac029edb0566}} 
+real&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{object@{object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!object@{object}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28acf7088fae10ac1c888296c6abe135276}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28acf7088fae10ac1c888296c6abe135276}} 
+object&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{array@{array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!array@{array}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aa0a0cb93f2fc0f7be4b539f4e904917a}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28aa0a0cb93f2fc0f7be4b539f4e904917a}} 
+array&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant@{constant}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!constant@{constant}}}\mbox{\Hypertarget{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a995640a12d5339aabee76a933fb5f519}\label{json__tree_8h_a5de71900664e9c2b31ef59a9352f0d28a995640a12d5339aabee76a933fb5f519}} 
+constant&pour true, false et null \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{json__tree_8h_a64a23e508691b4752f9d3423ce7f44cf}\label{json__tree_8h_a64a23e508691b4752f9d3423ce7f44cf}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Create\+Json\+Array@{Create\+Json\+Array}}
+\index{Create\+Json\+Array@{Create\+Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Create\+Json\+Array()}{CreateJsonArray()}}
+{\footnotesize\ttfamily \hyperlink{structJsonArray}{Json\+Array}$\ast$ Create\+Json\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creation en memoire d\textquotesingle{}un \hyperlink{structJsonArray}{Json\+Array} 
+
+\begin{DoxyReturn}{Returns}
+Json\+Array$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{json__tree_8h_af7af287d13cd208992c31d69f838c816}\label{json__tree_8h_af7af287d13cd208992c31d69f838c816}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Create\+Json\+Object@{Create\+Json\+Object}}
+\index{Create\+Json\+Object@{Create\+Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Create\+Json\+Object()}{CreateJsonObject()}}
+{\footnotesize\ttfamily \hyperlink{structJsonObject}{Json\+Object}$\ast$ Create\+Json\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+construit un \hyperlink{structJsonObject}{Json\+Object} vide 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structJsonObject}{Json\+Object} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{json__tree_8h_ad88d80b56f7d04bea1de11917e34fa3d}\label{json__tree_8h_ad88d80b56f7d04bea1de11917e34fa3d}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Create\+Json\+Pair@{Create\+Json\+Pair}}
+\index{Create\+Json\+Pair@{Create\+Json\+Pair}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Create\+Json\+Pair()}{CreateJsonPair()}}
+{\footnotesize\ttfamily \hyperlink{structJsonPair}{Json\+Pair}$\ast$ Create\+Json\+Pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{json__tree_8h_a9bab288b17c70677b8c1d7619b2925fc}\label{json__tree_8h_a9bab288b17c70677b8c1d7619b2925fc}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Create\+Json\+Value\+Container@{Create\+Json\+Value\+Container}}
+\index{Create\+Json\+Value\+Container@{Create\+Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Create\+Json\+Value\+Container()}{CreateJsonValueContainer()}}
+{\footnotesize\ttfamily \hyperlink{structJsonValueContainer}{Json\+Value\+Container}$\ast$ Create\+Json\+Value\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+construit un \hyperlink{structJsonValueContainer}{Json\+Value\+Container} vide 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{json__tree_8h_a61372b2f4a3eb734f752159f6265940d}\label{json__tree_8h_a61372b2f4a3eb734f752159f6265940d}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Delete\+Json\+Array@{Delete\+Json\+Array}}
+\index{Delete\+Json\+Array@{Delete\+Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Delete\+Json\+Array()}{DeleteJsonArray()}}
+{\footnotesize\ttfamily int Delete\+Json\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonArray}{Json\+Array} $\ast$$\ast$}]{\+\_\+array }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_ab9fcb0ea6aba690197eeaa9170d6e279}\label{json__tree_8h_ab9fcb0ea6aba690197eeaa9170d6e279}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Delete\+Json\+Object@{Delete\+Json\+Object}}
+\index{Delete\+Json\+Object@{Delete\+Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Delete\+Json\+Object()}{DeleteJsonObject()}}
+{\footnotesize\ttfamily int Delete\+Json\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonObject}{Json\+Object} $\ast$$\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_abcd2910290251bc96cec45cf46d364b7}\label{json__tree_8h_abcd2910290251bc96cec45cf46d364b7}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Delete\+Json\+Pair@{Delete\+Json\+Pair}}
+\index{Delete\+Json\+Pair@{Delete\+Json\+Pair}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Delete\+Json\+Pair()}{DeleteJsonPair()}}
+{\footnotesize\ttfamily int Delete\+Json\+Pair (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonPair}{Json\+Pair} $\ast$$\ast$}]{\+\_\+pair }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a6d02f560a673f8f70aec2c88d8e32d2d}\label{json__tree_8h_a6d02f560a673f8f70aec2c88d8e32d2d}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Delete\+Json\+Value\+Container@{Delete\+Json\+Value\+Container}}
+\index{Delete\+Json\+Value\+Container@{Delete\+Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Delete\+Json\+Value\+Container()}{DeleteJsonValueContainer()}}
+{\footnotesize\ttfamily int Delete\+Json\+Value\+Container (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$$\ast$}]{\+\_\+value\+Container }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_af308a2f032f23582b09b7a0238f8f268}\label{json__tree_8h_af308a2f032f23582b09b7a0238f8f268}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Get\+Json\+Value\+Container@{Get\+Json\+Value\+Container}}
+\index{Get\+Json\+Value\+Container@{Get\+Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Get\+Json\+Value\+Container()}{GetJsonValueContainer()}}
+{\footnotesize\ttfamily \hyperlink{structJsonValueContainer}{Json\+Value\+Container}$\ast$ Get\+Json\+Value\+Container (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonObject}{Json\+Object} $\ast$}]{\+\_\+object,  }\item[{const char $\ast$}]{\+\_\+string }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_ae1f0848cee2a75adc68951d7f4e0db94}\label{json__tree_8h_ae1f0848cee2a75adc68951d7f4e0db94}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Insert\+Json\+Array@{Insert\+Json\+Array}}
+\index{Insert\+Json\+Array@{Insert\+Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Insert\+Json\+Array()}{InsertJsonArray()}}
+{\footnotesize\ttfamily int Insert\+Json\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonArray}{Json\+Array} $\ast$}]{\+\_\+array,  }\item[{\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$}]{\+\_\+value\+Container,  }\item[{const unsigned int}]{\+\_\+position }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_add92f2aba1fffe0af85073527c95fc0e}\label{json__tree_8h_add92f2aba1fffe0af85073527c95fc0e}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Insert\+Json\+Object@{Insert\+Json\+Object}}
+\index{Insert\+Json\+Object@{Insert\+Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Insert\+Json\+Object()}{InsertJsonObject()}}
+{\footnotesize\ttfamily int Insert\+Json\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonObject}{Json\+Object} $\ast$}]{\+\_\+object,  }\item[{\hyperlink{structJsonPair}{Json\+Pair} $\ast$}]{\+\_\+pair }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a60f3e947d378f0d1513a6a2495110e0f}\label{json__tree_8h_a60f3e947d378f0d1513a6a2495110e0f}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Dot\+Json\+Array@{Print\+Dot\+Json\+Array}}
+\index{Print\+Dot\+Json\+Array@{Print\+Dot\+Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Dot\+Json\+Array()}{PrintDotJsonArray()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Dot\+Json\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonArray}{Json\+Array} $\ast$}]{\+\_\+array }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a995ed6708039e3e415e5baf8d00ea62e}\label{json__tree_8h_a995ed6708039e3e415e5baf8d00ea62e}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Dot\+Json\+Object@{Print\+Dot\+Json\+Object}}
+\index{Print\+Dot\+Json\+Object@{Print\+Dot\+Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Dot\+Json\+Object()}{PrintDotJsonObject()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Dot\+Json\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonObject}{Json\+Object} $\ast$}]{\+\_\+object,  }\item[{int}]{\+\_\+id,  }\item[{int}]{\+\_\+id\+Parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a30b5080b3f6aba1bbf430aac34d912f7}\label{json__tree_8h_a30b5080b3f6aba1bbf430aac34d912f7}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Json\+Array@{Print\+Json\+Array}}
+\index{Print\+Json\+Array@{Print\+Json\+Array}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Json\+Array()}{PrintJsonArray()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Json\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonArray}{Json\+Array} $\ast$}]{\+\_\+array }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_ae153464704693dc8283f34792b4c0a2e}\label{json__tree_8h_ae153464704693dc8283f34792b4c0a2e}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Json\+Object@{Print\+Json\+Object}}
+\index{Print\+Json\+Object@{Print\+Json\+Object}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Json\+Object()}{PrintJsonObject()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Json\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonObject}{Json\+Object} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_aa520ede60813d831e4d92fa2061ed0c4}\label{json__tree_8h_aa520ede60813d831e4d92fa2061ed0c4}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Json\+Pair@{Print\+Json\+Pair}}
+\index{Print\+Json\+Pair@{Print\+Json\+Pair}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Json\+Pair()}{PrintJsonPair()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Json\+Pair (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonPair}{Json\+Pair} $\ast$}]{\+\_\+pair }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_ac93a83ad1ed7f56dd9ecd83e5dfdbdb6}\label{json__tree_8h_ac93a83ad1ed7f56dd9ecd83e5dfdbdb6}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Print\+Json\+Value\+Container@{Print\+Json\+Value\+Container}}
+\index{Print\+Json\+Value\+Container@{Print\+Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Print\+Json\+Value\+Container()}{PrintJsonValueContainer()}}
+{\footnotesize\ttfamily char$\ast$ Print\+Json\+Value\+Container (\begin{DoxyParamCaption}\item[{const \hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$}]{\+\_\+value\+Container }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a028e96028bb843d57b69aecb42b50df1}\label{json__tree_8h_a028e96028bb843d57b69aecb42b50df1}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Update\+Json\+Pair@{Update\+Json\+Pair}}
+\index{Update\+Json\+Pair@{Update\+Json\+Pair}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Update\+Json\+Pair()}{UpdateJsonPair()}}
+{\footnotesize\ttfamily void Update\+Json\+Pair (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonPair}{Json\+Pair} $\ast$}]{\+\_\+pair,  }\item[{char $\ast$}]{\+\_\+string,  }\item[{\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$}]{\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{json__tree_8h_a918da5f7ca94d6544f77bef2fb75c177}\label{json__tree_8h_a918da5f7ca94d6544f77bef2fb75c177}} 
+\index{json\+\_\+tree.\+h@{json\+\_\+tree.\+h}!Update\+Json\+Value\+Container@{Update\+Json\+Value\+Container}}
+\index{Update\+Json\+Value\+Container@{Update\+Json\+Value\+Container}!json\+\_\+tree.\+h@{json\+\_\+tree.\+h}}
+\subsubsection{\texorpdfstring{Update\+Json\+Value\+Container()}{UpdateJsonValueContainer()}}
+{\footnotesize\ttfamily void Update\+Json\+Value\+Container (\begin{DoxyParamCaption}\item[{\hyperlink{structJsonValueContainer}{Json\+Value\+Container} $\ast$}]{\+\_\+value\+Container,  }\item[{\hyperlink{json__tree_8h_a4240fa9f317a2e54e34c73cc42f9f4ed}{Value\+Type}}]{\+\_\+type,  }\item[{\hyperlink{unionJsonValue}{Json\+Value}}]{\+\_\+value }\end{DoxyParamCaption})}
+
