@@ -86,7 +86,7 @@ int analyseurLR(char *_chaine) {
     return 0;
 }
 
-/* pour compiler c'est gcc pile.c tp2_lex.c tp3_a.c -o tp3_a*/
+/* Pour compiler utiliser : gcc pile.c tp2_lex.c tp3_a.c -o tp3_a*/
 int main(int argc, char *argv[]) {
     if (argc<2)
     {
@@ -95,7 +95,6 @@ int main(int argc, char *argv[]) {
     }
     else 
     {
-        printf("%d %s %s %s\n", argc, argv[0], argv[1], argv[2]);
         FILE* fichier=NULL;
         fichier=fopen(argv[1],"r");
         char *texte;
@@ -119,6 +118,8 @@ int main(int argc, char *argv[]) {
             }
             printf("%s\n",texte);
             analyseurLR(texte);
+            free(texte);
+            fclose(fichier);
         }
     }
     return 0;
