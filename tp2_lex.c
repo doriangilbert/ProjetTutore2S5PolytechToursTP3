@@ -654,6 +654,8 @@ int lex(TLex *_lexData)
  * \fn int main()
  * \brief fonction principale
  */
+#ifdef TEST
+
 int main()
 {
     char *test = " ";
@@ -677,3 +679,4 @@ int main()
     free(test);
     return 0;
 }
+#endif

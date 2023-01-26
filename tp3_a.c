@@ -13,8 +13,8 @@
 #include "pile.h"
 #include "tp2_lex.h"
 
-/* Table contenant les actions à effectuer (Acc='a' ; Deplacement='d' ; Reduction='<un numéro de règle>' ; Erreur='e') */
-int *TableAction[26][18] =
+/* Table contenant les actions à effectuer (Acc='a' ; Deplacement='d' ; Reduction=<un numéro de règle> ; Erreur='e') */
+int TableAction[26][18] =
 /*{    }    [    ]    ,    :    s    n    t    f    u    #    O    M    P    A    E    V*/
 {
 {'d', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'}, //0
@@ -76,10 +76,10 @@ int TableGoto[26][18] =
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}};//25
 
 /* Table contenant la taille de la partie droite de chaque règle*/
-int *taillePartieDroiteRegle = {2,3,1,3,3,2,3,1,3,1,1,1,1,1,1,1};
+int taillePartieDroiteRegle[16] = {2,3,1,3,3,2,3,1,3,1,1,1,1,1,1,1};
 
 /* Table contenant l'élément en partie gauche de chaque règle*/
-char *elementPartieGaucheRegle = {'O','O','M','M','P','A','A','E','E','V','V','V','V','V','V','V'};
+int elementPartieGaucheRegle[16] = {13,13,14,14,15,16,16,17,17,18,18,18,18,18,18,18};
 
 /**
  * \fn int analyseurLR()
@@ -101,11 +101,32 @@ int lexeme = lex(lex_data_analyseur);
 int fini = 0;
 while (!fini){
     int action;
+    if (_pile->indexSommet==-1)
+    {
+        lexeme=12;
+    }
+    else if (lexeme=1) lexeme=8;
+    else if (lexeme=2) lexeme=9;
+    else if (lexeme=3) lexeme=10;
+    else if (lexeme=4) lexeme=0;
+    else if (lexeme=5) lexeme=1;
+    else if (lexeme=6) lexeme=2;
+    else if (lexeme=7) lexeme=3;
+    else if (lexeme=8) lexeme=4;
+    else if (lexeme=9) lexeme=5;
+    else if (lexeme=10) lexeme=6;
+    else lexeme=7;
+
+
     action = TableAction[sommetInt(_pile)][lexeme]; /* Acc='a' ; Deplacement='d' ; Reduction='r' ; Erreur='e' */
     if (action == 'a')
     {
         /*O = Depiler un objet JSon de la PileJSon /* l'arbre JSON est sur la pile *Fini = vrai
         Retourner (O)*/
+        deleteIntPile(&_pile);
+        deleteLexData(&lex_data_analyseur);
+        deleteVoidPile(&_pileJSon);
+        printf("Le Json est bon");
         return 0;
     }
     else if (action == 'd')
@@ -116,11 +137,14 @@ while (!fini){
     else if (action == 'e')
     {
         printf("ERREUR\n");
-        fini=1;
+        deleteIntPile(&_pile);
+        deleteLexData(&lex_data_analyseur);
+        deleteVoidPile(&_pileJSon);
+        return 1;
     }
     else
     {
-        int action = (int)action;
+        action++;
         int i=0;
         while (i<taillePartieDroiteRegle[action])
         {
@@ -132,6 +156,31 @@ while (!fini){
 }
 }
 
+/* pour compiler c'est gcc pile.c tp2_lex.c tp3_a.c -o tp3_a*/
 void main(int argc, char *argv[]) {
     //A COMPLETER avec la lecture de fichier, l'appel à l'analyseur LR et la libération des ressources
+    FILE* fichier=NULL;
+    fichier=fopen("json_test_files/test.json","r");
+    char *texte;
+    if (fichier==NULL)
+    {
+        printf("erreur d'ouverture du fichier\n");
+    }
+    else
+    {
+        texte=malloc(sizeof(char)*1);
+        char charactere=fgetc(fichier);
+        texte[0]=charactere;
+        size_t i=1;
+        charactere=fgetc(fichier);
+        while(!feof(fichier))
+        {
+            texte=realloc(texte,sizeof(char)*(i+1));
+            texte[i]=charactere;
+            i++;
+            charactere=fgetc(fichier);
+        }
+        printf("%s\n",texte);
+        analyseurLR(texte);
+    }
 }
